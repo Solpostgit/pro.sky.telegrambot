@@ -35,7 +35,7 @@ public class NotificationSenderJob {
         logger.info("Notification job started for date time {}", currentDateTime);
 
         List<NotificationTask> allByNotificationDateTime = notificationTaskRepository.findAllByNotificationDateTime(currentDateTime);
-        logger.error("Notification job has found {} relevant notifications", allByNotificationDateTime.size());
+        logger.info("Notification job has found {} relevant notifications", allByNotificationDateTime.size());
 
         for (NotificationTask notificationTask : allByNotificationDateTime) {
             logger.info("Processing notification task {}", notificationTask);
